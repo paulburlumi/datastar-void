@@ -1,0 +1,66 @@
+@import url('gold.css');
+@import url('https://fonts.googleapis.com/css2?family=National+Park&family=Sigmar+One&display=swap');
+
+:root {
+    --primary: #cbdee1;
+    --secondary: #dad4c7;
+    --bg-primary: #9cb2be;
+    --bg-secondary: #93aea1;
+    --bg-2: hsl(from var(--bg-secondary) h s 20);
+    --bg-3: hsl(from var(--bg-secondary) h s 30);
+}
+
+html {
+    font-size: 1.5rem;
+    font-family: "National Park", sans-serif;
+    font-optical-sizing: auto;
+}
+
+body {
+    min-width: 100vw;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    grid-template-rows: 1fr 5vh;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--bg-primary), var(--bg-secondary));
+    background-size: 200% 200%;
+    animation: animateBackground 10s ease infinite;
+}
+
+@keyframes animateBackground {
+    50% { background-position: 100% 100%; }
+}
+
+.material-icons {
+    font-size: unset !important;
+    vertical-align: middle;
+}
+
+/* components */
+
+main {
+    display: grid;
+    grid-template-rows: 90vh 10vh;
+    place-items: center;
+}
+
+.message {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    color: #fff;
+    font-weight: bold;
+    pointer-events: none;
+    transition: opacity 1s linear;
+}
+
+input {
+    text-align: center;
+    padding: .2rem 1rem;
+    width: 80vw;
+    border: 2px solid var(--primary);
+    border-radius: 6rem;
+    filter: drop-shadow(0px 0px 4px var(--secondary))
+}
